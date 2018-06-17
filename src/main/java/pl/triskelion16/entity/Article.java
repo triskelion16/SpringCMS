@@ -1,5 +1,6 @@
 package pl.triskelion16.entity;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -30,20 +31,24 @@ public class Article {
 	
 	private String content;
 	
-//	private Date created;
-//	
-//	private Date updated;
+	private Date created;
+	
+	private Date updated;
 	
 	
 	public Article() {}
 
-	public Article(Long id, String title, Author author, List<Category> categories, String content) {
+	public Article(Long id, String title, Author author, List<Category> categories, String content, Date created,
+			Date updated) {
 		this.id = id;
 		this.title = title;
 		this.author = author;
 		this.categories = categories;
 		this.content = content;
+		this.created = created;
+		this.updated = updated;
 	}
+
 
 	public Long getId() {
 		return id;
@@ -83,6 +88,22 @@ public class Article {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public Date getUpdated() {
+		return updated;
+	}
+
+	public void setUpdated(Date updated) {
+		this.updated = updated;
 	}
 	
 }
