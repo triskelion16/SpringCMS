@@ -1,9 +1,12 @@
 package pl.triskelion16.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,12 +20,17 @@ public class Author {
 	private String firstName;
 	private String lastName;
 	
+	@OneToMany(mappedBy = "author")
+	private List<Article> articles;
+	
+	
 	public Author() {}
 	
-	public Author(Long id, String firstName, String lastName) {
+	public Author(Long id, String firstName, String lastName, List<Article> articles) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.articles = articles;
 	}
 
 	public Long getId() {
@@ -47,6 +55,14 @@ public class Author {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
 	}
 	
 }
