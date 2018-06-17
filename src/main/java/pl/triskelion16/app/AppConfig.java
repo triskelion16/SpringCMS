@@ -51,11 +51,10 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setViewClass(JstlView.class);
 
-        viewResolver.setPrefix("/WEB-INF/views/");
+        viewResolver.setPrefix("/views/");
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
-
 
     @Bean(name = "localeResolver")
     public LocaleContextResolver getLocaleContextResolver() {
@@ -68,16 +67,5 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public Validator validator() {
         return new LocalValidatorFactoryBean();
     }
-    
-//    @Override
-//    public void addFormatters(FormatterRegistry registry) {
-//        registry.addConverter(getStudentGroupConverter());
-//    }
-//    
-//    @Bean
-//    public AuthorConverter getStudentGroupConverter() {
-//        return new AuthorConverter();
-//    }
-
     
 }
