@@ -38,16 +38,16 @@ public class Article {
 	
 	public Article() {}
 
-	public Article(Long id, String title, Author author, List<Category> categories, String content, Date created,
-			Date updated) {
-		this.id = id;
-		this.title = title;
-		this.author = author;
-		this.categories = categories;
-		this.content = content;
-		this.created = created;
-		this.updated = updated;
-	}
+//	public Article(Long id, String title, Author author, List<Category> categories, String content, Date created,
+//			Date updated) {
+//		this.id = id;
+//		this.title = title;
+//		this.author = author;
+//		this.categories = categories;
+//		this.content = content;
+//		this.created = created;
+//		this.updated = updated;
+//	}
 
 
 	public Long getId() {
